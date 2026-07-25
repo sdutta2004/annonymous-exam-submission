@@ -24,7 +24,7 @@
 - ⚙️ **CI/CD Workflow**: [.github/workflows/ci.yml](.github/workflows/ci.yml)
 - 🌐 **Midnight Explorer**: [https://explorer.preprod.midnight.network](https://explorer.preprod.midnight.network)
 - 📡 **Network**: Midnight Preprod Testnet
-- 🔑 **Contract Address**: `0x7bc5bcbda238b94434b56594c031da9ce4c86faa`
+- 🔑 **Contract Address**: `0x7f51f73d34b21fc1e917de7f20d8667b6dd92e79`
 - 💡 **Vercel Note**: No `.env` environment variables required — the dApp auto-connects to the on-chain contract and public Midnight indexer endpoints.
 
 ---
@@ -194,7 +194,7 @@ Indexer URL:    https://indexer.preprod.midnight.network
 Deploying contracts/counter.compact circuit (AES)...
 
 [SUCCESS] AES Contract deployed successfully!
-Contract Address: 0x7bc5bcbda238b94434b56594c031da9ce4c86faa
+Contract Address: 0x7f51f73d34b21fc1e917de7f20d8667b6dd92e79
 ```
 
 ---
@@ -220,7 +220,7 @@ Expected output:
 ### Level 2 Checklist
 - [x] **Public GitHub Repository with README**: [https://github.com/sdutta2004/annonymous-exam-submission](https://github.com/sdutta2004/annonymous-exam-submission)
 - [x] **Live Demo Link**: Ready for Vercel deployment (no `.env` required, static SPA configuration)
-- [x] **Deployed Preprod Contract Address**: Verified on-chain at `0x7bc5bcbda238b94434b56594c031da9ce4c86faa`
+- [x] **Deployed Preprod Contract Address**: Verified on-chain at `0x7f51f73d34b21fc1e917de7f20d8667b6dd92e79`
 - [x] **Demo Video Workflow**: Browser wallet connection (`window.midnight.mnLace`) + ZK circuit execution lifecycle
 - [x] **Privacy Claim Documented**: Detailed matrix breaking down student secret witness vs disclosed commitment
 - [x] **Minimum 8 Commits**: 12+ structured commits on `main` branch
@@ -244,7 +244,7 @@ Expected output:
 | **GitHub Repo** | `https://github.com/sdutta2004/annonymous-exam-submission` |
 | **CI/CD Workflow** | `.github/workflows/ci.yml` |
 | **Network** | Midnight Preprod Testnet |
-| **Contract Address** | `0x7bc5bcbda238b94434b56594c031da9ce4c86faa` |
+| **Contract Address** | `0x7f51f73d34b21fc1e917de7f20d8667b6dd92e79` |
 | **Proof Server** | Docker: `midnightntwrk/proof-server:8.1.0` on port `6300` |
 | **Indexer** | `https://indexer.preprod.midnight.network` |
 | **Faucet** | `https://faucet.preprod.midnight.network` |
