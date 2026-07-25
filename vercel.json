@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "buildCommand": "npm run build",
+  "outputDirectory": "dist",
+  "cleanUrls": true,
+  "rewrites": [
+    { "source": "/submit", "destination": "/submit.html" },
+    { "source": "/checkin", "destination": "/checkin.html" },
+    { "source": "/admin", "destination": "/admin.html" },
+    { "source": "/inspector", "destination": "/inspector.html" },
+    { "source": "/explorer", "destination": "/explorer.html" }
+  ]
+}
