@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Portal | Anonymous Exam Submission</title>
+  <meta name="description" content="Submit exam answers anonymously using Zero-Knowledge proofs on Midnight Network.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/src/style.css">
+</head>
+<body>
+  <div class="app-layout">
+    <!-- Navbar -->
+    <header class="app-navbar">
+      <div class="nav-container">
+        <a href="/" class="brand-logo">
+          <span class="logo-icon">📝</span>
+          <div class="logo-text">
+            <span class="brand-name">Anonymous Exam Submission</span>
+            <span class="brand-sub">Student Submission Portal</span>
+          </div>
+        </a>
+        <nav class="nav-links">
+          <a href="/index.html" class="nav-link">Home</a>
+          <a href="/checkin.html" class="nav-link active">Student Portal</a>
+          <a href="/admin.html" class="nav-link">Evaluator Admin</a>
+          <a href="/inspector.html" class="nav-link">ZK Inspector</a>
+          <a href="/explorer.html" class="nav-link">Chain Explorer</a>
+        </nav>
+        <button id="connectWalletBtn" class="btn btn-primary btn-sm">Connect Wallet</button>
+      </div>
+    </header>
+
+    <!-- Main Section -->
+    <main class="main-content">
+      <div style="max-width: 800px; margin: 2rem auto; padding: 0 1.5rem;">
+        
+        <div style="text-align: center; margin-bottom: 2.5rem;">
+          <h1 style="font-size: 2.2rem; color: var(--text-primary); margin-bottom: 0.5rem;">Student Exam Submission</h1>
+          <p style="color: var(--text-secondary); font-size: 1.05rem;">Generate ZK Witness & Submit Answer Commitment to Midnight Network</p>
+        </div>
+
+        <!-- Form Card -->
+        <div style="background: rgba(15, 23, 42, 0.7); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 16px; padding: 2.5rem; backdrop-filter: blur(12px);">
+          
+          <form id="submitExamForm">
+            <!-- Exam ID -->
+            <div style="margin-bottom: 1.5rem;">
+              <label for="examInput" style="display: block; color: var(--text-primary); font-weight: 600; margin-bottom: 0.5rem;">Target Exam / Course ID Hash</label>
+              <input type="text" id="examInput" value="exam_cs101_final_2026" required
+                style="width: 100%; padding: 0.85rem 1rem; background: rgba(30, 41, 59, 0.6); border: 1px solid rgba(255, 255, 255, 0.15); border-radius: 8px; color: var(--text-primary); font-family: var(--font-mono); font-size: 0.95rem;">
+              <span style="font-size: 0.8rem; color: var(--text-secondary); margin-top: 0.35rem; display: block;">Must match active `examId` configured on-chain by the evaluator.</span>
+            </div>
+
+            <!-- Student Key Witness -->
+            <div style="margin-bottom: 1.5rem;">
+              <label for="studentKeyInput" style="display: block; color: var(--text-primary); font-weight: 600; margin-bottom: 0.5rem;">Student Private Key (ZK Witness)</label>
+              <input type="password" id="studentKeyInput" placeholder="e.g. secret_student_key_999" required
+                style="width: 100%; padding: 0.85rem 1rem; background: rgba(30, 41, 59, 0.6); border: 1px solid rgba(255, 255, 255, 0.15); border-radius: 8px; color: var(--text-primary); font-family: var(--font-mono); font-size: 0.95rem;">
+              <span style="font-size: 0.8rem; color: var(--text-secondary); margin-top: 0.35rem; display: block;">🔒 Private witness. Evaluators cannot derive your key or identity from the proof.</span>
+            </div>
+
+            <!-- Answer Content -->
+            <div style="margin-bottom: 2rem;">
+              <label for="answerContentInput" style="display: block; color: var(--text-primary); font-weight: 600; margin-bottom: 0.5rem;">Exam Answers / Solution Text</label>
+              <textarea id="answerContentInput" rows="5" placeholder="Enter solution answers or cryptographic hash payload..."
+                style="width: 100%; padding: 0.85rem 1rem; background: rgba(30, 41, 59, 0.6); border: 1px solid rgba(255, 255, 255, 0.15); border-radius: 8px; color: var(--text-primary); font-family: var(--font-mono); font-size: 0.9rem; resize: vertical;">Q1: O(n log n) sorting algorithm. Q2: Compact ZK proof verifies state transition in zero-knowledge.</textarea>
+            </div>
+
+            <!-- Submit Button -->
+            <button type="submit" class="btn btn-primary" style="width: 100%; padding: 1rem; font-size: 1.05rem; font-weight: 700;">
+              🚀 Execute ZK Circuit & Submit Exam
+            </button>
+          </form>
+
+          <!-- Progress Bar -->
+          <div id="progressBar" style="display: none; margin-top: 1.5rem;">
+            <div style="height: 6px; background: rgba(255,255,255,0.1); border-radius: 3px; overflow: hidden;">
+              <div id="progressFill" style="height: 100%; width: 0%; background: linear-gradient(90deg, var(--violet-400), var(--cyan-400)); transition: width 0.4s ease;"></div>
+            </div>
+            <p style="font-size: 0.85rem; color: var(--cyan-400); text-align: center; margin-top: 0.5rem;">Generating Zero-Knowledge Proof & Submitting to Midnight Network...</p>
+          </div>
+        </div>
+
+        <!-- Terminal Log Box -->
+        <div style="margin-top: 2rem; background: #090d16; border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 12px; padding: 1.5rem;">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem; border-bottom: 1px solid rgba(255, 255, 255, 0.08); padding-bottom: 0.75rem;">
+            <span style="font-family: var(--font-mono); font-size: 0.85rem; color: var(--text-secondary);">💻 ZK PROOF EXECUTION LOG</span>
+            <span id="proofProviderEl" style="font-size: 0.8rem; color: var(--violet-400); font-family: var(--font-mono);">Midnight Proof Service</span>
+          </div>
+          <div id="logBox" style="font-family: var(--font-mono); font-size: 0.85rem; height: 180px; overflow-y: auto; display: flex; flex-direction: column; gap: 0.4rem; color: #a7f3d0;">
+            <div class="log-line info">> System ready. Connect wallet or enter Student Key to submit exam.</div>
+          </div>
+        </div>
+
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="app-footer">
+      <div class="footer-container">
+        <p>Built with 🔒 on <a href="https://midnight.network" target="_blank" style="color: var(--violet-400);">Midnight Network</a></p>
+      </div>
+    </footer>
+  </div>
+
+  <script type="module" src="/src/index.ts"></script>
+</body>
+</html>
