@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Anonymous Exam Submission | Midnight Network ZK dApp</title>
+  <meta name="description" content="Privacy-preserving zero-knowledge anonymous student exam submission platform built on the Midnight Network using Compact smart contracts.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/src/style.css">
+  <style>
+    .hero-section {
+      text-align: center;
+      padding: 4rem 1.5rem 3rem;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.55rem;
+      background: rgba(124, 58, 255, 0.1);
+      border: 1px solid rgba(124, 58, 255, 0.35);
+      color: var(--violet-300);
+      padding: 0.45rem 1.15rem;
+      border-radius: 20px;
+      font-size: 0.82rem;
+      font-weight: 700;
+      margin-bottom: 1.75rem;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+    .hero-heading {
+      font-size: clamp(2.2rem, 5vw, 3.4rem);
+      font-weight: 700;
+      color: var(--text-primary);
+      line-height: 1.15;
+      letter-spacing: -0.03em;
+      margin-bottom: 1.35rem;
+    }
+    .hero-heading .gradient-text {
+      background: linear-gradient(135deg, var(--violet-400) 0%, var(--cyan-400) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .hero-subtext {
+      font-size: 1.1rem;
+      color: var(--text-secondary);
+      line-height: 1.7;
+      margin-bottom: 2.5rem;
+      max-width: 680px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .hero-cta-group {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1.25rem;
+      flex-wrap: wrap;
+    }
+    .btn-lg {
+      padding: 0.85rem 2.2rem;
+      font-size: 1rem;
+    }
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+      max-width: 1200px;
+      margin: 3rem auto;
+      padding: 0 1.5rem;
+    }
+    .feature-card {
+      background: rgba(15, 23, 42, 0.65);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 16px;
+      padding: 2rem;
+      transition: all 0.3s ease;
+    }
+    .feature-card:hover {
+      border-color: rgba(124, 58, 255, 0.4);
+      transform: translateY(-4px);
+    }
+    .feature-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 12px;
+      background: rgba(124, 58, 255, 0.15);
+      color: var(--violet-400);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      margin-bottom: 1.25rem;
+    }
+    .feature-title {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-bottom: 0.75rem;
+    }
+    .feature-desc {
+      font-size: 0.95rem;
+      color: var(--text-secondary);
+      line-height: 1.6;
+    }
+    .workflow-section {
+      max-width: 1000px;
+      margin: 4rem auto;
+      padding: 0 1.5rem;
+      text-align: center;
+    }
+    .workflow-steps {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1.5rem;
+      margin-top: 2.5rem;
+    }
+    .step-card {
+      background: rgba(30, 41, 59, 0.5);
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      border-radius: 12px;
+      padding: 1.5rem;
+      position: relative;
+    }
+    .step-number {
+      font-family: var(--font-mono);
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--cyan-400);
+      text-transform: uppercase;
+      margin-bottom: 0.5rem;
+    }
+    .privacy-matrix {
+      max-width: 1000px;
+      margin: 4rem auto;
+      padding: 0 1.5rem;
+    }
+    .privacy-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 1.5rem;
+      background: rgba(15, 23, 42, 0.6);
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+    .privacy-table th, .privacy-table td {
+      padding: 1rem 1.25rem;
+      text-align: left;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    }
+    .privacy-table th {
+      background: rgba(30, 41, 59, 0.8);
+      color: var(--text-primary);
+      font-weight: 600;
+    }
+  </style>
+</head>
+<body>
+  <div class="app-layout">
+    <!-- Navbar -->
+    <header class="app-navbar">
+      <div class="nav-container">
+        <a href="/" class="brand-logo">
+          <span class="logo-icon">📝</span>
+          <div class="logo-text">
+            <span class="brand-name">Anonymous Exam Submission</span>
+            <span class="brand-sub">Midnight Network ZK dApp</span>
+          </div>
+        </a>
+        <nav class="nav-links">
+          <a href="/index.html" class="nav-link active">Home</a>
+          <a href="/checkin.html" class="nav-link">Student Portal</a>
+          <a href="/admin.html" class="nav-link">Evaluator Admin</a>
+          <a href="/inspector.html" class="nav-link">ZK Inspector</a>
+          <a href="/explorer.html" class="nav-link">Chain Explorer</a>
+        </nav>
+        <button id="connectWalletBtn" class="btn btn-primary btn-sm">Connect Wallet</button>
+      </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+      <!-- Hero -->
+      <section class="hero-section">
+        <div class="hero-badge">
+          <span>🔒 Zero-Knowledge Academic Integrity</span>
+        </div>
+        <h1 class="hero-heading">
+          Submit Exams <span class="gradient-text">Anonymously</span> with Zero-Knowledge Proofs
+        </h1>
+        <p class="hero-subtext">
+          Eliminate grading bias and identity leaks. Students prove valid exam submission directly on the Midnight Network using Compact smart contracts while keeping student IDs and names strictly private.
+        </p>
+        <div class="hero-cta-group">
+          <a href="/checkin.html" class="btn btn-primary btn-lg">Submit Exam Anonymously →</a>
+          <a href="/explorer.html" class="btn btn-secondary btn-lg">View On-Chain Ledger</a>
+        </div>
+      </section>
+
+      <!-- Key Features -->
+      <section class="features-grid">
+        <div class="feature-card">
+          <div class="feature-icon">🛡️</div>
+          <h3 class="feature-title">Unbiased Evaluation</h3>
+          <p class="feature-desc">Evaluators grade purely on answer quality without knowing student identities, preventing subconscious bias or favoritism.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">🔐</div>
+          <h3 class="feature-title">Private ZK Witnesses</h3>
+          <p class="feature-desc">Student secret keys and raw answer vectors stay on your local browser. Only cryptographic commitments reach the blockchain.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">⚡</div>
+          <h3 class="feature-title">Compact Smart Contract</h3>
+          <p class="feature-desc">Powered by Midnight Network's Compact language, offering mathematically verifiable zero-knowledge proof generation.</p>
+        </div>
+      </section>
+
+      <!-- Workflow Steps -->
+      <section class="workflow-section">
+        <h2 style="font-size: 2rem; color: var(--text-primary); margin-bottom: 0.5rem;">How Anonymous Submission Works</h2>
+        <p style="color: var(--text-secondary);">Four seamless steps protecting student privacy end-to-end</p>
+        <div class="workflow-steps">
+          <div class="step-card">
+            <div class="step-number">Step 01</div>
+            <h4 style="color: var(--text-primary); margin: 0.5rem 0;">Enter Exam ID</h4>
+            <p style="font-size: 0.88rem; color: var(--text-secondary);">Target course & exam session ID verified on-chain.</p>
+          </div>
+          <div class="step-card">
+            <div class="step-number">Step 02</div>
+            <h4 style="color: var(--text-primary); margin: 0.5rem 0;">Provide Student Key</h4>
+            <p style="font-size: 0.88rem; color: var(--text-secondary);">Private secret key acts as witness inside browser local state.</p>
+          </div>
+          <div class="step-card">
+            <div class="step-number">Step 03</div>
+            <h4 style="color: var(--text-primary); margin: 0.5rem 0;">Generate ZK Proof</h4>
+            <p style="font-size: 0.88rem; color: var(--text-secondary);">Midnight Proof Server generates cryptographic proof.</p>
+          </div>
+          <div class="step-card">
+            <div class="step-number">Step 04</div>
+            <h4 style="color: var(--text-primary); margin: 0.5rem 0;">Disclose Commitment</h4>
+            <p style="font-size: 0.88rem; color: var(--text-secondary);">On-chain ledger records verified submission commitment.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Privacy Model Table -->
+      <section class="privacy-matrix">
+        <h2 style="font-size: 1.8rem; color: var(--text-primary); text-align: center; margin-bottom: 0.5rem;">Midnight Privacy Guarantee</h2>
+        <p style="color: var(--text-secondary); text-align: center;">Mathematical separation of private witness vs public disclosure</p>
+        <table class="privacy-table">
+          <thead>
+            <tr>
+              <th>Data Element</th>
+              <th>Visibility</th>
+              <th>Protection Level</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Student Secret Key & Identity</td>
+              <td><span style="color: #ef4444; font-weight: 600;">Private (Local Only)</span></td>
+              <td>Never leaves student browser / ZK witness</td>
+            </tr>
+            <tr>
+              <td>Raw Exam Answer Text</td>
+              <td><span style="color: #ef4444; font-weight: 600;">Private (Local Witness)</span></td>
+              <td>Hashed into ZK commitment vector</td>
+            </tr>
+            <tr>
+              <td>Submission Count Ledger</td>
+              <td><span style="color: #10b981; font-weight: 600;">Public Ledger</span></td>
+              <td>Incremented on valid proof submission</td>
+            </tr>
+            <tr>
+              <td>Exam Commitment Hash</td>
+              <td><span style="color: #10b981; font-weight: 600;">Public Ledger</span></td>
+              <td>Proves valid submission without identity leak</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="app-footer">
+      <div class="footer-container">
+        <p>Built with 🔒 on <a href="https://midnight.network" target="_blank" style="color: var(--violet-400);">Midnight Network</a> using Compact Smart Contracts</p>
+        <p style="font-size: 0.85rem; color: var(--text-secondary); margin-top: 0.5rem;">Anonymous Exam Submission (AES) • Preprod Testnet</p>
+      </div>
+    </footer>
+  </div>
+
+  <script type="module" src="/src/index.ts"></script>
+</body>
+</html>
