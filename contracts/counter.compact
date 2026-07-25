@@ -1,0 +1,54 @@
+// ============================================================================
+// ANONYMOUS EXAM SUBMISSION (AES) CONTRACT - MIDNIGHT NETWORK
+// ============================================================================
+// Privacy-Preserving Zero-Knowledge Student Exam Submission.
+// Multi-Witness Anonymous Answer Upload with Private Student Key,
+// Exam-Bound Epoch Verification, and Cryptographic Answer Commitment.
+// ============================================================================
+
+pragma language_version 0.23;
+
+import CompactStandardLibrary;
+
+export ledger submissionCount: Counter;
+export ledger examId: Bytes<32>;
+export ledger lastSubmissionCommitment: Bytes<32>;
+export ledger activeSession: Counter;
+
+constructor(initialExamId: Bytes<32>) {
+  examId = disclose(initialExamId);
+  submissionCount.increment(1);
+  activeSession.increment(1);
+}
+
+witness studentSecretKey(): Bytes<32>;
+witness submissionNonce(): Bytes<32>;
+witness answerHash(): Bytes<32>;
+
+export circuit submitExam(expectedExamId: Bytes<32>): Bytes<32> {
+  assert(examId == expectedExamId, "Invalid exam ID provided for submission");
+  
+  const studentKey = studentSecretKey();
+  const nonce = submissionNonce();
+  const answers = answerHash();
+
+  const submissionCommitment = persistentHash<Vector<4, Bytes<32>>>([
+    pad(32, "aes:exam:submission:v1"),
+    studentKey,
+    nonce,
+    answers
+  ]);
+  
+  submissionCount.increment(1);
+  const disclosedCommitment = disclose(submissionCommitment);
+  lastSubmissionCommitment = disclosedCommitment;
+  return disclosedCommitment;
+}
+
+export circuit resetExam(newExamId: Bytes<32>): [] {
+  examId = disclose(newExamId);
+}
+
+export circuit incrementSession(): [] {
+  activeSession.increment(1);
+}
