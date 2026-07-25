@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Anonymous Exam Submission | Midnight Network ZK dApp</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <div class="app-layout">
+    <!-- Navbar -->
+    <header class="app-navbar">
+      <div class="nav-container">
+        <a href="/" class="brand-logo">
+          <span class="logo-icon">📝</span>
+          <div class="logo-text">
+            <span class="brand-name">Anonymous Exam Submission</span>
+            <span class="brand-sub">Midnight Network ZK dApp</span>
+          </div>
+        </a>
+        <nav class="nav-links">
+          <a href="/index.html" class="nav-link active">Home</a>
+          <a href="/checkin.html" class="nav-link">Student Portal</a>
+          <a href="/admin.html" class="nav-link">Evaluator Admin</a>
+          <a href="/inspector.html" class="nav-link">ZK Inspector</a>
+          <a href="/explorer.html" class="nav-link">Chain Explorer</a>
+        </nav>
+        <button id="connectWalletBtn" class="btn btn-primary btn-sm">Connect Wallet</button>
+      </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+      <div style="max-width: 900px; margin: 3rem auto; padding: 0 1.5rem; text-align: center;">
+        <h1 style="font-size: 2.5rem; color: var(--text-primary); margin-bottom: 1rem;">
+          Anonymous Exam Submission (AES)
+        </h1>
+        <p style="color: var(--text-secondary); font-size: 1.1rem; line-height: 1.6; margin-bottom: 2rem;">
+          Zero-Knowledge student exam answer verification built on Midnight Network using Compact smart contracts.
+        </p>
+        <div style="display: flex; gap: 1rem; justify-content: center;">
+          <a href="/checkin.html" class="btn btn-primary">Student Submission Portal →</a>
+          <a href="/explorer.html" class="btn btn-secondary">Chain Explorer</a>
+        </div>
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="app-footer">
+      <div class="footer-container">
+        <p>Built with 🔒 on <a href="https://midnight.network" target="_blank" style="color: var(--violet-400);">Midnight Network</a></p>
+      </div>
+    </footer>
+  </div>
+
+  <script type="module" src="./index.ts"></script>
+</body>
+</html>

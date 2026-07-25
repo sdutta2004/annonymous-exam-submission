@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ZK Circuit Inspector | Anonymous Exam Submission</title>
+  <meta name="description" content="Inspect Compact zero-knowledge circuits, ledger fields, and private witnesses for Anonymous Exam Submission.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/src/style.css">
+</head>
+<body>
+  <div class="app-layout">
+    <!-- Navbar -->
+    <header class="app-navbar">
+      <div class="nav-container">
+        <a href="/" class="brand-logo">
+          <span class="logo-icon">📝</span>
+          <div class="logo-text">
+            <span class="brand-name">Anonymous Exam Submission</span>
+            <span class="brand-sub">ZK Circuit Inspector</span>
+          </div>
+        </a>
+        <nav class="nav-links">
+          <a href="/index.html" class="nav-link">Home</a>
+          <a href="/checkin.html" class="nav-link">Student Portal</a>
+          <a href="/admin.html" class="nav-link">Evaluator Admin</a>
+          <a href="/inspector.html" class="nav-link active">ZK Inspector</a>
+          <a href="/explorer.html" class="nav-link">Chain Explorer</a>
+        </nav>
+        <button id="connectWalletBtn" class="btn btn-primary btn-sm">Connect Wallet</button>
+      </div>
+    </header>
+
+    <!-- Main Section -->
+    <main class="main-content">
+      <div style="max-width: 1000px; margin: 2rem auto; padding: 0 1.5rem;">
+        
+        <div style="text-align: center; margin-bottom: 2rem;">
+          <h1 style="font-size: 2.2rem; color: var(--text-primary); margin-bottom: 0.5rem;">Compact ZK Circuit Inspector</h1>
+          <p style="color: var(--text-secondary);">Source code and cryptographic witness specifications for `contracts/counter.compact`</p>
+        </div>
+
+        <!-- Code Block Window -->
+        <div style="background: #090d16; border: 1px solid rgba(255, 255, 255, 0.12); border-radius: 12px; overflow: hidden; box-shadow: 0 12px 32px rgba(0,0,0,0.5);">
+          <div style="background: rgba(30, 41, 59, 0.7); padding: 0.75rem 1.25rem; display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid rgba(255,255,255,0.08);">
+            <div style="display: flex; align-items: center; gap: 0.5rem;">
+              <span style="width: 12px; height: 12px; border-radius: 50%; background: #ef4444; display: inline-block;"></span>
+              <span style="width: 12px; height: 12px; border-radius: 50%; background: #f59e0b; display: inline-block;"></span>
+              <span style="width: 12px; height: 12px; border-radius: 50%; background: #10b981; display: inline-block;"></span>
+              <span style="font-family: var(--font-mono); font-size: 0.85rem; color: var(--text-secondary); margin-left: 0.5rem;">contracts/counter.compact</span>
+            </div>
+            <span style="font-family: var(--font-mono); font-size: 0.8rem; color: var(--cyan-400);">Language: Compact v0.23</span>
+          </div>
+
+          <pre style="padding: 1.5rem; font-family: var(--font-mono); font-size: 0.88rem; line-height: 1.6; color: #e2e8f0; overflow-x: auto; margin: 0;"><code><span style="color: #c084fc;">pragma language_version</span> 0.23;
+
+<span style="color: #c084fc;">import</span> CompactStandardLibrary;
+
+<span style="color: #22d3ee;">export ledger</span> submissionCount: Counter;
+<span style="color: #22d3ee;">export ledger</span> examId: Bytes&lt;32&gt;;
+<span style="color: #22d3ee;">export ledger</span> lastSubmissionCommitment: Bytes&lt;32&gt;;
+<span style="color: #22d3ee;">export ledger</span> activeSession: Counter;
+
+<span style="color: #f472b6;">witness</span> studentSecretKey(): Bytes&lt;32&gt;;
+<span style="color: #f472b6;">witness</span> submissionNonce(): Bytes&lt;32&gt;;
+<span style="color: #f472b6;">witness</span> answerHash(): Bytes&lt;32&gt;;
+
+<span style="color: #38bdf8;">export circuit</span> <span style="color: #fbbf24;">submitExam</span>(expectedExamId: Bytes&lt;32&gt;): Bytes&lt;32&gt; {
+  <span style="color: #c084fc;">assert</span>(examId == expectedExamId, <span style="color: #a7f3d0;">"Invalid exam ID provided for submission"</span>);
+
+  <span style="color: #c084fc;">const</span> studentKey = studentSecretKey();
+  <span style="color: #c084fc;">const</span> nonce = submissionNonce();
+  <span style="color: #c084fc;">const</span> answers = answerHash();
+
+  <span style="color: #c084fc;">const</span> submissionCommitment = persistentHash&lt;Vector&lt;4, Bytes&lt;32&gt;&gt;&gt;([
+    pad(32, <span style="color: #a7f3d0;">"aes:exam:submission:v1"</span>),
+    studentKey,
+    nonce,
+    answers
+  ]);
+
+  submissionCount.increment(1);
+  <span style="color: #c084fc;">const</span> disclosedCommitment = disclose(submissionCommitment);
+  lastSubmissionCommitment = disclosedCommitment;
+  <span style="color: #c084fc;">return</span> disclosedCommitment;
+}
+</code></pre>
+        </div>
+
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="app-footer">
+      <div class="footer-container">
+        <p>Built with 🔒 on <a href="https://midnight.network" target="_blank" style="color: var(--violet-400);">Midnight Network</a></p>
+      </div>
+    </footer>
+  </div>
+
+  <script type="module" src="/src/index.ts"></script>
+</body>
+</html>
