@@ -1,0 +1,35 @@
+{
+  "name": "annonymous-exam-submission",
+  "version": "1.0.0",
+  "description": "Anonymous Exam Submission (AES) — Privacy-preserving zero-knowledge student exam answer submission dApp built on the Midnight Network using Compact smart contracts.",
+  "type": "module",
+  "main": "src/index.ts",
+  "scripts": {
+    "dev": "vite",
+    "compile": "compact compile contracts/counter.compact managed",
+    "test": "vitest run",
+    "build": "tsc --noEmit && vite build",
+    "deploy": "node --loader ts-node/esm src/integration/deploy.ts"
+  },
+  "dependencies": {
+    "@midnight-ntwrk/compact-runtime": "0.16.0",
+    "@midnight-ntwrk/dapp-connector-api": "4.0.1",
+    "@midnight-ntwrk/midnight-js-contracts": "4.1.1",
+    "@midnight-ntwrk/midnight-js-fetch-zk-config-provider": "4.1.1",
+    "@midnight-ntwrk/midnight-js-http-client-proof-provider": "4.1.1",
+    "@midnight-ntwrk/midnight-js-indexer-public-data-provider": "4.1.1",
+    "@midnight-ntwrk/midnight-js-level-private-state-provider": "4.1.1",
+    "@midnight-ntwrk/midnight-js-network-id": "4.1.1",
+    "@midnight-ntwrk/midnight-js-node-zk-config-provider": "4.1.1",
+    "@midnight-ntwrk/midnight-js-protocol": "4.1.1",
+    "@midnight-ntwrk/midnight-js-types": "4.1.1",
+    "@midnight-ntwrk/midnight-js-utils": "4.1.1"
+  },
+  "devDependencies": {
+    "ts-node": "^10.9.2",
+    "tsx": "^4.19.2",
+    "typescript": "^5.9.3",
+    "vite": "^5.4.11",
+    "vitest": "^3.0.5"
+  }
+}
