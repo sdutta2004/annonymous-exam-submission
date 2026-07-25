@@ -21,6 +21,8 @@
 ## 🏗️ Repository & Deployment
 
 - 📦 **GitHub Repository**: [https://github.com/sdutta2004/annonymous-exam-submission](https://github.com/sdutta2004/annonymous-exam-submission)
+- 🚀 **Live Demo (Vercel)**: [https://annonymous-exam-submission.vercel.app](https://annonymous-exam-submission.vercel.app)
+- 🎬 **Demo Video**: [Watch on Google Drive](https://drive.google.com/file/d/1qUrdDd8uir7rHmX2cgEHukYAQFltgZLX/view?usp=sharing)
 - ⚙️ **CI/CD Workflow**: [.github/workflows/ci.yml](.github/workflows/ci.yml)
 - 🌐 **Midnight Explorer**: [https://explorer.preprod.midnight.network](https://explorer.preprod.midnight.network)
 - 📡 **Network**: Midnight Preprod Testnet
@@ -219,21 +221,21 @@ Expected output:
 
 ### Level 2 Checklist
 - [x] **Public GitHub Repository with README**: [https://github.com/sdutta2004/annonymous-exam-submission](https://github.com/sdutta2004/annonymous-exam-submission)
-- [x] **Live Demo Link**: Ready for Vercel deployment (no `.env` required, static SPA configuration)
+- [x] **Live Demo Link**: [https://annonymous-exam-submission.vercel.app](https://annonymous-exam-submission.vercel.app)
 - [x] **Deployed Preprod Contract Address**: Verified on-chain at `0x7f51f73d34b21fc1e917de7f20d8667b6dd92e79`
-- [x] **Demo Video Workflow**: Browser wallet connection (`window.midnight.mnLace`) + ZK circuit execution lifecycle
+- [x] **Demo Video Workflow**: [Watch Video](https://drive.google.com/file/d/1qUrdDd8uir7rHmX2cgEHukYAQFltgZLX/view?usp=sharing)
 - [x] **Privacy Claim Documented**: Detailed matrix breaking down student secret witness vs disclosed commitment
-- [x] **Minimum 8 Commits**: 12+ structured commits on `main` branch
+- [x] **Minimum 8 Commits**: 15+ structured commits on `main` branch
 
 ### Level 3 Checklist
 - [x] **Public GitHub Repository with Complete README**: Full documentation with badges, code blocks & guide
-- [x] **Live Demo Link**: Vercel configuration (`vercel.json`) included and tested
+- [x] **Live Demo Link**: [https://annonymous-exam-submission.vercel.app](https://annonymous-exam-submission.vercel.app)
 - [x] **Screenshot / Test Output**: 4/4 passing Vitest unit tests in `tests/counter.test.ts`
 - [x] **CI/CD Badge & Workflow File**: GitHub Actions workflow at `.github/workflows/ci.yml` running automated tests and build
-- [x] **Demo Video (1 minute)**: Demonstrating full wallet session, ZK proof execution & evaluator inspector state
+- [x] **Demo Video (1 minute)**: [Watch Video](https://drive.google.com/file/d/1qUrdDd8uir7rHmX2cgEHukYAQFltgZLX/view?usp=sharing)
 - [x] **README Privacy Model Section**: Detailed breakdown of what an observer CAN vs CANNOT learn
 - [x] **Product Proposal Submitted**: Zero-knowledge anonymous student exam submission
-- [x] **Minimum 10 Commits**: 12+ structured commits on `main` branch
+- [x] **Minimum 10 Commits**: 15+ structured commits on `main` branch
 
 ---
 
@@ -242,6 +244,8 @@ Expected output:
 | Environment | Details |
 |---|---|
 | **GitHub Repo** | `https://github.com/sdutta2004/annonymous-exam-submission` |
+| **Live Demo** | `https://annonymous-exam-submission.vercel.app` |
+| **Demo Video** | `https://drive.google.com/file/d/1qUrdDd8uir7rHmX2cgEHukYAQFltgZLX/view?usp=sharing` |
 | **CI/CD Workflow** | `.github/workflows/ci.yml` |
 | **Network** | Midnight Preprod Testnet |
 | **Contract Address** | `0x7f51f73d34b21fc1e917de7f20d8667b6dd92e79` |
