@@ -101,8 +101,8 @@ export class Contract {
           privateTranscriptOutputs: []
         };
         const result_0 = this._submitExam_0(context,
-                                                  partialProofData,
-                                                  expectedExamId_0);
+                                            partialProofData,
+                                            expectedExamId_0);
         partialProofData.output = { value: _descriptor_1.toValue(result_0), alignment: _descriptor_1.alignment() };
         return { result: result_0, context: context, proofData: partialProofData, gasCost: context.gasCost };
       },
@@ -137,8 +137,8 @@ export class Contract {
           privateTranscriptOutputs: []
         };
         const result_0 = this._resetExam_0(context,
-                                                partialProofData,
-                                                newExamId_0);
+                                           partialProofData,
+                                           newExamId_0);
         partialProofData.output = { value: [], alignment: [] };
         return { result: result_0, context: context, proofData: partialProofData, gasCost: context.gasCost };
       },
@@ -377,14 +377,14 @@ export class Contract {
                                                                                                      { popeq: { cached: false,
                                                                                                                 result: undefined } }]).value),
                                           expectedExamId_0),
-                            'Invalid event organizer ID provided');
-    const passcode_0 = this._studentSecretKey_0(context, partialProofData);
+                            'Invalid exam ID provided for submission');
+    const studentKey_0 = this._studentSecretKey_0(context, partialProofData);
     const nonce_0 = this._submissionNonce_0(context, partialProofData);
-    const role_0 = this._answerHash_0(context, partialProofData);
-    const attendeeCommitment_0 = this._persistentHash_0([new Uint8Array([97, 101, 99, 105, 58, 97, 116, 116, 101, 110, 100, 101, 101, 58, 99, 111, 109, 109, 105, 116, 109, 101, 110, 116, 58, 118, 49, 0, 0, 0, 0, 0]),
-                                                         passcode_0,
-                                                         nonce_0,
-                                                         role_0]);
+    const answers_0 = this._answerHash_0(context, partialProofData);
+    const submissionCommitment_0 = this._persistentHash_0([new Uint8Array([97, 101, 115, 58, 101, 120, 97, 109, 58, 115, 117, 98, 109, 105, 115, 115, 105, 111, 110, 58, 118, 49, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]),
+                                                           studentKey_0,
+                                                           nonce_0,
+                                                           answers_0]);
     const tmp_0 = 1n;
     __compactRuntime.queryLedgerState(context,
                                       partialProofData,
@@ -401,7 +401,7 @@ export class Contract {
                                                                 .value
                                                             )) } },
                                        { ins: { cached: true, n: 1 } }]);
-    const disclosedCommitment_0 = attendeeCommitment_0;
+    const disclosedCommitment_0 = submissionCommitment_0;
     __compactRuntime.queryLedgerState(context,
                                       partialProofData,
                                       [
@@ -479,7 +479,7 @@ export function ledger(stateOrChargedState) {
                                                                         { popeq: { cached: true,
                                                                                    result: undefined } }]).value);
     },
-    get organizerId() {
+    get examId() {
       return _descriptor_1.fromValue(__compactRuntime.queryLedgerState(context,
                                                                        partialProofData,
                                                                        [
