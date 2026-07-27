@@ -97,7 +97,7 @@ export circuit incrementSession(): [] {
 ## 🌐 Deployed Smart Contract & Infrastructure
 
 - **Target Network**: Midnight Preprod Testnet
-- **Unique Contract Address**: `020059debaf583ea08fa89fcd3696d14c27d5e00670c9f6fe23aba285e2af0b1`
+- **Unique Contract Address**: `02006f5c2ec465ebf39dc1f16f2efd4f664e7399951dcac34bb1bdc953d48668`
 - **Proof Server Endpoint**: `http://localhost:6300` (Local Docker container: `midnightntwrk/proof-server:8.1.0`)
 - **Indexer Endpoint**: `https://indexer.preprod.midnight.network`
 - **Frontend Architecture**: Pure Vanilla TypeScript (`src/index.ts`, `src/integration/contract.ts`), HTML5, CSS3, compiled via Vite ESM modules with WebAssembly top-level await plugins.
@@ -118,6 +118,6 @@ export circuit incrementSession(): [] {
 
 - [x] **Compact ZK Circuit**: Written in Compact `v0.23` with private witness isolation and public ledger exports.
 - [x] **Vitest Unit Test Suite**: 100% test coverage passing (`4/4` tests passing).
-- [x] **Unique Preprod Address**: Configured with dedicated deployment contract address `020059debaf583ea08fa89fcd3696d14c27d5e00670c9f6fe23aba285e2af0b1` (replacing default templates).
+- [x] **Unique Preprod Address**: Configured with dedicated deployment contract address `02006f5c2ec465ebf39dc1f16f2efd4f664e7399951dcac34bb1bdc953d48668` (replacing default templates).
 - [x] **Vanilla TS Frontend**: Pure TypeScript logic (`src/index.ts`) managing UI bindings, proof client, and DOM interaction.
 - [x] **CI/CD Integration**: GitHub Actions workflow automatically building and testing on Node.js v22.
