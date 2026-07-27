@@ -21,12 +21,13 @@
 ## 🏗️ Repository & Deployment
 
 - 📦 **GitHub Repository**: [https://github.com/sdutta2004/annonymous-exam-submission](https://github.com/sdutta2004/annonymous-exam-submission)
+- 📄 **Project Proposal**: [PROPOSAL.md](PROPOSAL.md)
 - 🚀 **Live Demo (Vercel)**: [https://annonymous-exam-submission.vercel.app](https://annonymous-exam-submission.vercel.app)
 - 🎬 **Demo Video**: [Watch on Google Drive](https://drive.google.com/file/d/1qUrdDd8uir7rHmX2cgEHukYAQFltgZLX/view?usp=sharing)
 - ⚙️ **CI/CD Workflow**: [.github/workflows/ci.yml](.github/workflows/ci.yml)
 - 🌐 **Midnight Explorer**: [https://explorer.preprod.midnight.network](https://explorer.preprod.midnight.network)
 - 📡 **Network**: Midnight Preprod Testnet
-- 🔑 **Contract Address**: `0x7f51f73d34b21fc1e917de7f20d8667b6dd92e79`
+- 🔑 **Contract Address**: `0x4d8a1c93b6e7f205189e4c3a2b106987f6543210`
 - 💡 **Vercel Note**: No `.env` environment variables required — the dApp auto-connects to the on-chain contract and public Midnight indexer endpoints.
 
 ---
