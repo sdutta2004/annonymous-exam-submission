@@ -27,7 +27,7 @@
 - ⚙️ **CI/CD Workflow**: [.github/workflows/ci.yml](.github/workflows/ci.yml)
 - 🌐 **Midnight Explorer**: [https://explorer.preprod.midnight.network](https://explorer.preprod.midnight.network)
 - 📡 **Network**: Midnight Preprod Testnet
-- 🔑 **Contract Address**: `02005b146aa3b6131aa3efdfb8804b4dd3b01677d669ad2badce47a63e29b8b7`
+- 🔑 **Contract Address**: `020059debaf583ea08fa89fcd3696d14c27d5e00670c9f6fe23aba285e2af0b1`
 - 💡 **Vercel Note**: No `.env` environment variables required — the dApp auto-connects to the on-chain contract and public Midnight indexer endpoints.
 
 ---
@@ -197,7 +197,7 @@ Indexer URL:    https://indexer.preprod.midnight.network
 Deploying contracts/counter.compact circuit (AES)...
 
 [SUCCESS] AES Contract deployed successfully!
-Contract Address: 02005b146aa3b6131aa3efdfb8804b4dd3b01677d669ad2badce47a63e29b8b7
+Contract Address: 020059debaf583ea08fa89fcd3696d14c27d5e00670c9f6fe23aba285e2af0b1
 ```
 
 ---
@@ -223,7 +223,7 @@ Expected output:
 ### Level 2 Checklist
 - [x] **Public GitHub Repository with README**: [https://github.com/sdutta2004/annonymous-exam-submission](https://github.com/sdutta2004/annonymous-exam-submission)
 - [x] **Live Demo Link**: [https://annonymous-exam-submission.vercel.app](https://annonymous-exam-submission.vercel.app)
-- [x] **Deployed Preprod Contract Address**: Verified on-chain at `02005b146aa3b6131aa3efdfb8804b4dd3b01677d669ad2badce47a63e29b8b7`
+- [x] **Deployed Preprod Contract Address**: Verified on-chain at `020059debaf583ea08fa89fcd3696d14c27d5e00670c9f6fe23aba285e2af0b1`
 - [x] **Demo Video Workflow**: [Watch Video](https://drive.google.com/file/d/1qUrdDd8uir7rHmX2cgEHukYAQFltgZLX/view?usp=sharing)
 - [x] **Privacy Claim Documented**: Detailed matrix breaking down student secret witness vs disclosed commitment
 - [x] **Minimum 8 Commits**: 15+ structured commits on `main` branch
@@ -249,7 +249,7 @@ Expected output:
 | **Demo Video** | `https://drive.google.com/file/d/1qUrdDd8uir7rHmX2cgEHukYAQFltgZLX/view?usp=sharing` |
 | **CI/CD Workflow** | `.github/workflows/ci.yml` |
 | **Network** | Midnight Preprod Testnet |
-| **Contract Address** | `02005b146aa3b6131aa3efdfb8804b4dd3b01677d669ad2badce47a63e29b8b7` |
+| **Contract Address** | `020059debaf583ea08fa89fcd3696d14c27d5e00670c9f6fe23aba285e2af0b1` |
 | **Proof Server** | Docker: `midnightntwrk/proof-server:8.1.0` on port `6300` |
 | **Indexer** | `https://indexer.preprod.midnight.network` |
 | **Faucet** | `https://faucet.preprod.midnight.network` |
