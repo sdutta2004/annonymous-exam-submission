@@ -97,7 +97,7 @@ export circuit incrementSession(): [] {
 ## 🌐 Deployed Smart Contract & Infrastructure
 
 - **Target Network**: Midnight Preprod Testnet
-- **Unique Contract Address**: `0x4d8a1c93b6e7f205189e4c3a2b106987f6543210`
+- **Unique Contract Address**: `0x5b5a7658fbd911616b6a895cd8089cb165a93b77`
 - **Proof Server Endpoint**: `http://localhost:6300` (Local Docker container: `midnightntwrk/proof-server:8.1.0`)
 - **Indexer Endpoint**: `https://indexer.preprod.midnight.network`
 - **Frontend Architecture**: Pure Vanilla TypeScript (`src/index.ts`, `src/integration/contract.ts`), HTML5, CSS3, compiled via Vite ESM modules with WebAssembly top-level await plugins.

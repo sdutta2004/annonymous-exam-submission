@@ -27,7 +27,7 @@
 - ⚙️ **CI/CD Workflow**: [.github/workflows/ci.yml](.github/workflows/ci.yml)
 - 🌐 **Midnight Explorer**: [https://explorer.preprod.midnight.network](https://explorer.preprod.midnight.network)
 - 📡 **Network**: Midnight Preprod Testnet
-- 🔑 **Contract Address**: `0x4d8a1c93b6e7f205189e4c3a2b106987f6543210`
+- 🔑 **Contract Address**: `0x5b5a7658fbd911616b6a895cd8089cb165a93b77`
 - 💡 **Vercel Note**: No `.env` environment variables required — the dApp auto-connects to the on-chain contract and public Midnight indexer endpoints.
 
 ---
