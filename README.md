@@ -34,14 +34,28 @@
 
 ## 📸 Platform Screenshots
 
-### Anonymous Exam Submission — Landing Page
-![Landing Page](photos/image.png)
+<div align="center">
 
-### ZK Proof Generation & Activity Log
-![ZK Proof Generation](photos/image-1.png)
+### 🌐 1. Anonymous Exam Submission — Landing Page
+![Anonymous Exam Submission Landing Page](photos/image.png)
 
-### Multi-Page Dashboard & Chain Explorer
-![Multi-Page Dashboard](photos/screenshot.png)
+*Privacy-preserving zero-knowledge student exam answer submission interface built on Midnight Network.*
+
+<br/>
+
+### 🔒 2. Zero-Knowledge Proof Generation & Exam Submission
+![ZK Proof Generation & Exam Submission](photos/image-1.png)
+
+*Real-time ZK proof creation, witness computation, and verified submission state update.*
+
+<br/>
+
+### 🔍 3. Multi-Page Dashboard & On-Chain Explorer
+![Multi-Page Dashboard & Chain Explorer](photos/screenshot.png)
+
+*Live on-chain stats, active exam session epoch, and cryptographic commitment history.*
+
+</div>
 
 ---
 
