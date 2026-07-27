@@ -19,7 +19,7 @@ async function main() {
   console.log("Deploying contracts/counter.compact circuit (AES)...");
   
   // Simulated deployment output — replace with real Midnight SDK deployment
-  const contractAddressPlaceholder = "0x" + Array.from({length: 40}, () => Math.floor(Math.random()*16).toString(16)).join('');
+  const contractAddressPlaceholder = "0200" + Array.from({length: 60}, () => Math.floor(Math.random()*16).toString(16)).join('');
   
   console.log("\n[SUCCESS] AES Contract deployed successfully!");
   console.log(`Contract Address: ${contractAddressPlaceholder}`);
