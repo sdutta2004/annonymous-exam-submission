@@ -53,7 +53,7 @@
 ![Evaluator Admin Console](photos/admin.png)
 
 ### 3. Student Portal — ZK Witness Proof Generation & Exam Submission
-![ZK Witness Proof Generation](photos/zk witness.png)
+![ZK Witness Proof Generation](photos/zk-witness.png)
 
 ### 4. Mobile Responsive Navbar & Glassmorphism UI
 ![Mobile Responsive UI](photos/mobile-ui.png)
