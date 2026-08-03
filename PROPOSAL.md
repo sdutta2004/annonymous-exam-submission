@@ -2,7 +2,7 @@
 
 > **Zero-Knowledge Academic Integrity Protocol on Midnight Network**
 
-[![Midnight Network](https://img.shields.io/badge/Network-Midnight_Preprod-8b5cf6?style=flat-square)](https://explorer.preprod.midnight.network)
+[![Midnight Network](https://img.shields.io/badge/Network-Midnight_Preprod-8b5cf6?style=flat-square)](https://explorer.preview.midnight.network)
 [![Compact Language](https://img.shields.io/badge/Compact-v0.23-06b6d4?style=flat-square)](https://midnight.network)
 [![License](https://img.shields.io/badge/License-MIT-blue.svg?style=flat-square)](LICENSE)
 
@@ -96,10 +96,10 @@ export circuit incrementSession(): [] {
 
 ## 🌐 Deployed Smart Contract & Infrastructure
 
-- **Target Network**: Midnight Preprod Testnet
+- **Target Network**: Midnight Preview Testnet
 - **Unique Contract Address**: `02006f5c2ec465ebf39dc1f16f2efd4f664e7399951dcac34bb1bdc953d48668`
 - **Proof Server Endpoint**: `http://localhost:6300` (Local Docker container: `midnightntwrk/proof-server:8.1.0`)
-- **Indexer Endpoint**: `https://indexer.preprod.midnight.network`
+- **Indexer Endpoint**: `https://indexer.preview.midnight.network/api/v4/graphql`
 - **Frontend Architecture**: Pure Vanilla TypeScript (`src/index.ts`, `src/integration/contract.ts`), HTML5, CSS3, compiled via Vite ESM modules with WebAssembly top-level await plugins.
 
 ---

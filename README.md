@@ -3,7 +3,7 @@
 
 [![GitHub Repo](https://img.shields.io/badge/GitHub-annonymous--exam--submission-181717?style=flat-square&logo=github)](https://github.com/sdutta2004/annonymous-exam-submission)
 [![CI/CD Pipeline](https://github.com/sdutta2004/annonymous-exam-submission/actions/workflows/ci.yml/badge.svg)](https://github.com/sdutta2004/annonymous-exam-submission/actions/workflows/ci.yml)
-[![Midnight Network](https://img.shields.io/badge/Network-Midnight_Preprod-8b5cf6?style=flat-square)](https://explorer.preprod.midnight.network)
+[![Midnight Network](https://img.shields.io/badge/Network-Midnight_Preprod-8b5cf6?style=flat-square)](https://explorer.preview.midnight.network)
 [![Compact Language](https://img.shields.io/badge/Compact-v0.23-06b6d4?style=flat-square)](https://midnight.network)
 [![Node.js Version](https://img.shields.io/badge/Node.js-v22.x-10b981?style=flat-square)](https://nodejs.org)
 [![License](https://img.shields.io/badge/License-MIT-blue.svg?style=flat-square)](LICENSE)
@@ -25,8 +25,8 @@
 - 🚀 **Live Demo (Vercel)**: [https://annonymous-exam-submission.vercel.app](https://annonymous-exam-submission.vercel.app)
 - 🎬 **Demo Video**: [Watch on Google Drive](https://drive.google.com/file/d/1qUrdDd8uir7rHmX2cgEHukYAQFltgZLX/view?usp=sharing)
 - ⚙️ **CI/CD Workflow**: [.github/workflows/ci.yml](.github/workflows/ci.yml)
-- 🌐 **Midnight Explorer**: [https://explorer.preprod.midnight.network](https://explorer.preprod.midnight.network)
-- 📡 **Network**: Midnight Preprod Testnet
+- 🌐 **Midnight Explorer**: [https://explorer.preview.midnight.network](https://explorer.preview.midnight.network)
+- 📡 **Network**: Midnight Preview Testnet
 - 🔑 **Contract Address**: `02006f5c2ec465ebf39dc1f16f2efd4f664e7399951dcac34bb1bdc953d48668`
 - 💡 **Vercel Note**: No `.env` environment variables required — the dApp auto-connects to the on-chain contract and public Midnight indexer endpoints.
 
@@ -122,7 +122,7 @@ export circuit incrementSession(): [] {
 public async connectWallet(): Promise<{ connected: boolean; walletAddress: string; walletName: string }> {
   const provider = this.getBrowserWalletProvider(); // window.midnight.mnLace
   if (!provider) throw new Error("Midnight Lace Wallet extension not detected.");
-  const connectedApi = await provider.connect('preprod');
+  const connectedApi = await provider.connect('preview');
   const address = await connectedApi.getUnshieldedAddress();
   return { connected: true, walletAddress: address.unshieldedAddress, walletName: provider.name };
 }
@@ -192,7 +192,7 @@ Output:
 =======================================================
 Target Network: preprod
 Proof Server:   http://localhost:6300
-Indexer URL:    https://indexer.preprod.midnight.network
+Indexer URL:    https://indexer.preview.midnight.network/api/v4/graphql
 -------------------------------------------------------
 Deploying contracts/counter.compact circuit (AES)...
 
@@ -248,11 +248,11 @@ Expected output:
 | **Live Demo** | `https://annonymous-exam-submission.vercel.app` |
 | **Demo Video** | `https://drive.google.com/file/d/1qUrdDd8uir7rHmX2cgEHukYAQFltgZLX/view?usp=sharing` |
 | **CI/CD Workflow** | `.github/workflows/ci.yml` |
-| **Network** | Midnight Preprod Testnet |
+| **Network** | Midnight Preview Testnet |
 | **Contract Address** | `02006f5c2ec465ebf39dc1f16f2efd4f664e7399951dcac34bb1bdc953d48668` |
 | **Proof Server** | Docker: `midnightntwrk/proof-server:8.1.0` on port `6300` |
-| **Indexer** | `https://indexer.preprod.midnight.network` |
-| **Faucet** | `https://faucet.preprod.midnight.network` |
+| **Indexer** | `https://indexer.preview.midnight.network/api/v4/graphql` |
+| **Faucet** | `https://faucet.preview.midnight.network` |
 
 ---
 
