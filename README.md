@@ -27,21 +27,39 @@
 - ⚙️ **CI/CD Workflow**: [.github/workflows/ci.yml](.github/workflows/ci.yml)
 - 🌐 **Midnight Explorer**: [https://explorer.preview.midnight.network](https://explorer.preview.midnight.network)
 - 📡 **Network**: Midnight Preview Testnet
-- 🔑 **Contract Address**: `02006f5c2ec465ebf39dc1f16f2efd4f664e7399951dcac34bb1bdc953d48668`
+- 🔑 **Contract Address**: `02006f5c2ec465ebf39dc1f16f2efd4f664e7399951dcac34bb1bdc953d48668` ✅ **CONFIRMED**
 - 💡 **Vercel Note**: No `.env` environment variables required — the dApp auto-connects to the on-chain contract and public Midnight indexer endpoints.
+
+**Verified On-Chain Circuit Calls (Midnight Lace / 1AM Wallet on Preview):**
+
+| # | Circuit | TxHash | Status |
+|---|---|---|---|
+| 1 | `resetExam(Bytes<32>)` | `0x96be9fef64c0b536f8f6f4bada06ae1c8e77cc135f2efdeaad4b6ce0891c3770` | ✅ CONFIRMED |
+| 2 | `submitExam(Bytes<32>)` | `0x5a85886a759b483bd7f6f04c467bfd96bd939abfd72070f74b052627792f2c8b` | ✅ CONFIRMED |
+
+- **Signed By (Lace / 1AM Wallet)**: `mn_addr_preview1rl4s2vrg5ev5c38q6ggje9fehhlvtx32f5g92nytgqr02528xcuq65gemd`
+- **Updated Exam ID**: `sdsd_exam_cs102_midterm_2026`
+- **Proof Provider**: Midnight Preview Cloud ZK Service
+- **Status**: All circuits **CONFIRMED (Midnight Preview)**
 
 ---
 
 ## 📸 Platform Screenshots
 
 ### 1. Anonymous Exam Submission — Landing Page
-![Anonymous Exam Submission Landing Page](photos/image.png)
+![Anonymous Exam Submission Landing Page](photos/dashboard.png)
 
-### 2. Zero-Knowledge Proof Generation & Exam Submission
-![ZK Proof Generation & Exam Submission](photos/image-1.png)
+### 2. Evaluator Admin Console & On-Chain Management
+![Evaluator Admin Console](photos/admin.png)
 
-### 3. Multi-Page Dashboard & Chain Explorer
-![Multi-Page Dashboard & Chain Explorer](photos/screenshot.png)
+### 3. Student Portal — ZK Witness Proof Generation & Exam Submission
+![ZK Witness Proof Generation](photos/zk witness.png)
+
+### 4. Mobile Responsive Navbar & Glassmorphism UI
+![Mobile Responsive UI](photos/mobile-ui.png)
+
+### 5. Automated Vitest Unit Test Suite (4/4 Passing)
+![Vitest Test Suite Output](photos/test-run.png)
 
 ---
 
