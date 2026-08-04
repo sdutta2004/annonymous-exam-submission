@@ -25,9 +25,9 @@
 - 🚀 **Live Demo (Vercel)**: [https://annonymous-exam-submission.vercel.app](https://annonymous-exam-submission.vercel.app)
 - 🎬 **Demo Video**: [Watch on Google Drive](https://drive.google.com/file/d/1qUrdDd8uir7rHmX2cgEHukYAQFltgZLX/view?usp=sharing)
 - ⚙️ **CI/CD Workflow**: [.github/workflows/ci.yml](.github/workflows/ci.yml)
-- 🌐 **Midnight Explorer**: [https://explorer.preview.midnight.network](https://explorer.preview.midnight.network)
+- 🌐 **Midnight Explorer**: [https://preview.midnightexplorer.com/contracts/0x65bd5c06626e6615df26a253c55f328223319222f67b926bc8683229c8137577](https://preview.midnightexplorer.com/contracts/0x65bd5c06626e6615df26a253c55f328223319222f67b926bc8683229c8137577)
 - 📡 **Network**: Midnight Preview Testnet
-- 🔑 **Contract Address**: `02006f5c2ec465ebf39dc1f16f2efd4f664e7399951dcac34bb1bdc953d48668` ✅ **CONFIRMED**
+- 🔑 **Contract Address**: `0x65bd5c06626e6615df26a253c55f328223319222f67b926bc8683229c8137577` ✅ **CONFIRMED**
 - 💡 **Vercel Note**: No `.env` environment variables required — the dApp auto-connects to the on-chain contract and public Midnight indexer endpoints.
 
 **Verified On-Chain Circuit Calls (Midnight Lace / 1AM Wallet on Preview):**
